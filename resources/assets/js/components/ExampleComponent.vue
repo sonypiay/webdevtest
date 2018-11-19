@@ -4,9 +4,9 @@
     <div class="uk-position-relative uk-visible-toggle uk-light">
       <ul class="uk-slideshow-items" uk-height-viewport>
         <li v-for="asset in assets">
-          <img @click="redirectTarget(asset.target)" class="uk-width-1-1" v-if="getWidthWindow <= 414" :src="url + '/qeon_assets/' + asset.mobile" alt="" uk-cover>
-          <img @click="redirectTarget(asset.target)" class="uk-width-1-1" v-else-if="getWidthWindow >= 768 && getWidthWindow <= 1024" :src="url + '/qeon_assets/' + asset.tablet" alt="" uk-cover>
-          <img @click="redirectTarget(asset.target)" class="uk-width-1-1" v-else :src="url + '/qeon_assets/' + asset.tablet" alt="" uk-cover>
+          <img @click="redirectTarget(asset.target)" class="uk-width-1-1" v-if="getWidthWindow <= 414" :src="url + '/qeon_assets/' + asset.mobile" :alt="asset.mobile" uk-cover>
+          <img @click="redirectTarget(asset.target)" class="uk-width-1-1" v-else-if="getWidthWindow >= 768 && getWidthWindow <= 1024" :src="url + '/qeon_assets/' + asset.tablet" :alt="asset.tablet" uk-cover>
+          <img @click="redirectTarget(asset.target)" class="uk-width-1-1" v-else :src="url + '/qeon_assets/' + asset.desktop" :alt="asset.desktop" uk-cover>
         </li>
       </ul>
       <a class="uk-slidenav-large uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
